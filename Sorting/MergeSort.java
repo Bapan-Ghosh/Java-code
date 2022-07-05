@@ -47,7 +47,7 @@ public class MergeSort {
 
     static void mSort(int a[], int l, int r) {
         if (l < r) {
-            int mid = (l + r) / 2;
+            int mid = l+ (r-l)/2;
             mSort(a, l, mid);
             mSort(a, mid + 1, r);
             merge(a, l, mid, r);

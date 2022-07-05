@@ -30,10 +30,10 @@ public class QuickSort {
         int pivot = a[l];
         int j = h;
         while (i < j) {
-            while (a[i] <= pivot && i<h) {
+            while (a[i] <= pivot && i<j) {
                 i++;
             }
-            while (a[j] > pivot && j >= l) {
+            while (a[j] > pivot && j >= i) {
                 j--;
             }
             if (i < j) {
@@ -44,11 +44,11 @@ public class QuickSort {
         return j;
     }
 
-    static void quickSort(int a[], int l, int h) {
+    static void QuickSort(int a[], int l, int h) {
         if (l < h) {
             int position = partition(a, l, h);
-            quickSort(a, l, position - 1);
-            quickSort(a, position + 1, h);
+            QuickSort(a, l, position - 1);
+            QuickSort(a, position + 1, h);
         }
     }
     public static void main(String args[]) {
@@ -60,7 +60,7 @@ public class QuickSort {
         System.out.println("Elements before sorting :");
         printData(a, n);
         System.out.println("Elements after sorting :");
-        quickSort(a, 0, n - 1);
+        QuickSort(a, 0, n - 1);
         printData(a, n);
     }
 }
